@@ -11,27 +11,27 @@ import { TurmaModule } from './turma/turma.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'root',
-      database: 'db_projetohackathon',
-      entities: [Turma, Grupo, Projeto],
-      synchronize: true
-    }),
     // TypeOrmModule.forRoot({
-    //   type: 'postgres',
-    //   url: process.env.DATABASE_URL,
-    //   logging: false,
-    //   dropSchema: false,
-    //   ssl: {
-    //     rejectUnauthorized: false,
-    //   },
-    //   synchronize: true,
-    //   autoLoadEntities: true,
+    //   type: 'mysql',
+    //   host: 'localhost',
+    //   port: 3306,
+    //   username: 'root',
+    //   password: 'root',
+    //   database: 'db_projetohackathon',
+    //   entities: [Turma, Grupo, Projeto],
+    //   synchronize: true
     // }),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      url: process.env.DATABASE_URL,
+      logging: false,
+      dropSchema: false,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+      synchronize: true,
+      autoLoadEntities: true,
+    }),
     TurmaModule, 
     GrupoModule, 
     ProjetoModule

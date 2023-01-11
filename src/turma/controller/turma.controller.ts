@@ -1,9 +1,7 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
-import { ok } from "assert";
 import { Turma } from "../entities/turma.entity";
 import { TurmaService } from "../service/turma.service";
-
 
 @ApiTags("turma")
 @Controller('/turma')
